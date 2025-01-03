@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+
+  body {
+    margin: 0;
+    background-color: #15112b;
+  }
+
+  header {
+    background-color: #15112b;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+  }
+
+  #logo {
+    display: inline;
+  }
+
+  main {
+    background-color: #15112b;
+    text-align: center;
+    margin:0;
+  }
+  
+  footer {
+    background-color: #15112b;
+    color: #fff;
+    text-align: center;
+  }
+
+  h1 {
+    display: inline;
+    color: white;
+  }
+
+  #basket {
+    height: 800px;
+    width: 1024px;
+    background-color: #ebe7ff;
+    margin: 0 auto; /* Centers the div horizontally */
+  }
+  
+  #basketTable,#paybackTable {
+    width: 100%;
+  }
+
+
+
+  .prodQ {
+    width: 50px;
+  }
+
+  
+  
+</style>
+  
+</head>
+<body>
+  <header><img src="content/images/logo.png" id="logo" width="275px"/><h1> - What fruits do you want?</h1></header>
+  <main>
+    
+    <div id="basket">
+
+      <table id="basketTable">
+        <thead>
+          <th>Image</th>
+          <th>Product</th>
+          <th>price</th>
+          <th>Quantity</th>
+          <th>Total cost</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="content/images/banana.png" width="80"></td>
+            <td>Banana</td>
+            <td>5:-</td>
+            <td><input id="bananaQ" class="prodQ" type="number" value="0" min="0"></td>
+            <td><span id="bananaCost">0</span></td>
+          </tr>
+          <tr>
+            <td><img src="content/images/apple.png" width="80"></td>
+            <td>apple</td>
+            <td>10:-</td>
+            <td><input id="appleQ" class="prodQ" type="number" value="0" min="0"></td>
+            <td><span id="appleCost">0</span></td>
+          </tr>
+          <tr>
+            <td><img src="content/images/kiwi.png" width="80"></td>
+            <td>kiwi</td>
+            <td>8:-</td>
+            <td><input id="kiwiQ" class="prodQ" type="number" value="0" min="0"></td>
+            <td><span id="kiwiCost">0</span></td>
+          </tr>
+          <tr>
+            <td><img src="content/images/mango.png" width="80"></td>
+            <td>Mango</td>
+            <td>15:-</td>
+            <td><input id="mangoQ" class="prodQ" type="number" value="0" min="0"></td>
+            <td><span id="mangoCost">0</span></td>
+          </tr>
+          <tr>
+            <td><img src="content/images/orange.png" width="80"></td>
+            <td>Orange</td>
+            <td>25:-</td>
+            <td><input id="orangeQ" class="prodQ" type="number" value="0" min="0"></td>
+            <td><span id="orangeCost">0</span></td>
+          </tr>
+        </tbody>
+
+      </table>
+      <br/>
+      <b>Total cost: <span id="totalCost">0</span>:-</b>
+      <br/>
+
+      <br/><br/><hr/><br/>How much will you pay?<br/>
+      <input type="number" value="0" min="0" id="totalPay"/>
+      <br/><br/><br/>
+      <div>You will get <span id="totalPayback">0</span>:- total back</div><br/>
+      <table id="paybackTable">
+        <thead>
+          <th>1000kr</th>
+          <th>500kr</th>
+          <th>100kr</th>
+          <th>50kr</th>
+          <th>20kr</th>
+          <th>10kr</th>
+          <th>5kr</th>
+          <th>2kr</th>
+          <th>1kr</th>
+        </thead>
+        <tbody>
+          <td><span id="count1000">0</span>st<br><img src="content/images/1000.jpg" width="75"></td>
+          <td><span id="count500">0</span>st<br><img src="content/images/500.jpg" width="75"></td>
+          <td><span id="count100">0</span>st<br><img src="content/images/100.jpg" width="75"></td>
+          <td><span id="count50">0</span>st<br><img src="content/images/50.jpg" width="75"></td>
+          <td><span id="count20">0</span>st<br><img src="content/images/20.jpg" width="75"></td>
+          <td><span id="count10">0</span>st<br><img src="content/images/10.png" width="50"></td>
+          <td><span id="count5">0</span>st<br><img src="content/images/5.png" width="50"></td>
+          <td><span id="count2">0</span> st<br><img src="content/images/2.png" width="50"></td>
+          <td><span id="count1">0</span> st<br><img src="content/images/1.png" width="50"></td>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>&copy; Tobias Eriksson 2024</footer>
+
+
+  <script src="content/js/javascript.js"></script>
+</body>
+</html>

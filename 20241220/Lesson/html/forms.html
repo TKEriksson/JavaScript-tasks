@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <h1>Header</h1>
+    <a href="https://www.w3schools.com/html/default.asp" target="_blank">Learn Html</a>
+    <a href="contactus.html">Contact</a>
+    <a href="about.html"> About Us</a>
+
+    <br/><br/>
+  </header>
+  <main>
+
+    <!-- read about HTTP (request and response) & TCP/IP -->
+    <form action="forms.html" method="get">
+
+      <label>First name <input type="text" id="fName" name="fName"/></label><br/>
+
+      <label>Last name <input type="text" id="lName" name="lName"/></label><br/>
+
+      <br/>
+      <label>Password <input type="password" id="password" name="pw"/>
+        <span onmousedown="document.getElementById('password').setAttribute('type','text')" onmouseup="document.getElementById('password').setAttribute('type','password')" onmouseleave="document.getElementById('password').setAttribute('type','password')" style="cursor:help; position: relative; top: 6px; left: -35px; font-size:22pt">👁</span></label>
+
+        <br/><br/>
+
+      <label>Date of birth <input type="date" id="date" name="date"></label><br/><br/>
+
+      <label>Color <input type="color" id="color" name="color"/></label><br/><br/>
+
+      <label>Email <input type="email" id="email" name="email"/></label><br/>
+
+      <label>Phone <input type="tel" id="tel" name="tel"/></label><br/><br/>
+
+      <label>CV <input type="file" id="cv" name="cv"/></label><br/>
+
+      <label>Skills</label><br>
+         <input type="checkbox" id="cpp" name="skillCpp" value="true"/>C++<br/>
+         <input type="checkbox" id="js" name="skillJs" value="true"/>JavaScript<br/>
+         <input type="checkbox" id="vb" name="skillVb" value="true"/>Visual Basic<br/>
+      <br/><br/>
+
+      <div>
+        <label>Gender
+        </label><br/>
+        <label>Male <input type="radio" id="male" value="male" name="gender" checked></label>
+        <label>Female <input type="radio" id="female" value="female" name="gender"></label>
+      </div>
+
+      <label>Country
+        <select name="country" id="country">
+          <option value="swe">Sweden</option>
+          <option value="usa">USA</option>
+          <option value="moon" disabled>Moon</option>
+          <option value="pluto">Pluto</option>
+        </select>
+      </label>
+      <br/><br/>
+      <button type="button" id="justABtn">Click</button>
+      <input type="reset" id="reset" value="reset"/>
+      <input type="submit" id="submitBtn" value="Skicka"/>
+
+
+    </form>
+
+    <div><h1>You sent:</h1>
+    
+      <div id="youSent"></div>
+      <script>
+        const queryString = window.location.search;
+      
+        const urlParams = new URLSearchParams(queryString);
+      
+        let str = "";
+        urlParams.forEach((v, k) => {
+          try {
+
+              document.getElementById(k).setAttribute("value", urlParams.get(k));
+
+          } catch(e) {
+              console.log(e);
+          }
+          if (urlParams.get(k)[0] == "#") {
+
+            str += "<b>" + (k + "</b> - <span style=background-color:" + urlParams.get(k) + ">" + urlParams.get(k)+ "</span><br>");
+
+          } else {
+
+          str += "<b>" + (k + "</b> - " + urlParams.get(k)+ "<br>");
+
+        }
+        });
+
+        document.getElementById("youSent").innerHTML = str;
+
+      </script>
+    </div>
+
+  </main>
+  <footer>
+    <h1>Footer</h1>
+  </footer>
+
+
+  
+
+</body>
+</html>

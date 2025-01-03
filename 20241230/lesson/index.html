@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./content/css/style.css"/>
+
+  <script></script>
+  <style>
+    #greenBox, #pinkBox {
+      height: 150px;
+      width: 150px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    #greenBox {
+      background-color: green;
+    }
+
+    
+    #pinkBox {
+      background-color: pink;
+    }
+
+    
+
+    #a, #b {
+      width: 50px;
+      height: 35px;
+    }
+
+    #res {
+      width: 450px;
+      height: 40px;
+      background-color: aqua;
+
+    }
+  </style>
+</head>
+<body>
+  <h1 id="res">Display</h1>
+  <input type="number" id="a"/>+<input type="number" id="b"/>
+
+
+  <script>
+    let a;
+    let b;
+    function calc() {
+      a = document.getElementById('a').value;
+      b = document.getElementById('b').value;
+      showResult(a, b);
+    }
+
+  </script>
+
+  <button id="calcBtn">Click to display result</button>
+  <script>
+
+    //let x = 10;
+    //let y = 12;
+    //let result = x + y;
+    //console.log(result);
+    //document.write(result);
+    //document.getElementById("res").innerHTML = `${x} + ${y} = ${result}`;
+    function showResult(aa,bb) {
+      let result = Number(aa)+Number(bb);
+      document.getElementById("res").innerHTML = `${aa} + ${bb} = ${result}`;
+    }
+
+
+
+    document.getElementById('calcBtn').addEventListener('click', calc);
+
+  </script>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  
+  <div id="greenBox"></div>
+  <button id="hideBtnGreenBox">Hide</button>
+  <button id="showBtnGreenBox">Show</button>
+
+  <br/><br/>
+    
+  <div id="pinkBox"></div>
+  <button id="toggleBtnPinkBox" onclick="toggle()">Toggle</button>
+
+
+  <script>
+    function hideGreenBox() {
+      document.getElementById("greenBox").style.display = "none";
+    }
+
+    function showGreenBox() {
+      document.getElementById("greenBox").style.display = "block";
+    }
+
+    document.getElementById('hideBtnGreenBox').addEventListener('click', hideGreenBox);
+    document.getElementById('showBtnGreenBox').addEventListener('click', showGreenBox);
+
+
+
+    // LEts toggle ;)
+
+    function toggle() {
+      // Initially document.getElementById("pinkBox").style.display will be an empty string if its not set inline in the HTML document in the pinkBox div element (style="display: block"). By check if its not "none", the toggle will work initally too. 
+            document.getElementById("pinkBox").style.display != "none" ? document.getElementById("pinkBox").style.display = "none" : document.getElementById("pinkBox").style.display = "block";
+    }
+
+    //document.getElementById('toggleBtnPinkBox').addEventListener('click', toggle);
+
+  </script>
+
+
+  <br/>
+
+  <br/>
+
+  <br/>
+
+  <p id="p1">The addEventListener() method attaches an event handler to the specified element.
+
+    The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
+    
+    You can add many event handlers to one element.
+    
+    You can add many event handlers of the same type to one element, i.e two "click" events.
+    
+    You can add event listeners to any DOM object not only HTML elements. i.e the window object.
+    
+    The addEventListener() method makes it easier to control how the event reacts to bubbling.
+    </p>
+
+
+    <button id="btn1">click</button>
+
+    <script>
+
+      document.getElementById("btn1").addEventListener("click", changeBg);
+      document.getElementById("btn1").addEventListener("mouseover", changeBg);
+      document.getElementById("btn1").addEventListener("mouseout", changeBg);
+      document.getElementById("p1").addEventListener("mouseover", changeBg);
+      document.getElementById("p1").addEventListener("mouseout", changeBg);
+      document.getElementById("p1").addEventListener("click", changeBg);
+
+      function changeBg() {
+        let clr = rgb();
+        let cclr = getComplementaryColor(clr);
+        console.log(clr + " " + cclr);
+        document.getElementById("p1").style.backgroundColor = clr;
+        document.getElementById("p1").style.color = cclr;
+      }
+
+      function getHex(l) {
+        let hex = "0123456789ABCDEF";
+        return hex[Math.floor(Math.random()*16)];
+      }
+
+      function rgb() {
+        let hex = "0123456789ABCDEF";
+        return "#" + getHex() + getHex() + getHex() + getHex() + getHex() + getHex();
+
+      }
+
+
+
+
+      function getComplementaryColor(hex) {
+        // Remove the hash (#) if it exists
+        hex = hex.replace('#', '');
+      
+        // Convert hex to RGB
+        let r = parseInt(hex.substring(0, 2), 16);
+        let g = parseInt(hex.substring(2, 4), 16);
+        let b = parseInt(hex.substring(4, 6), 16);
+      
+        // Get the complement of each RGB value
+        r = 255 - r;
+        g = 255 - g;
+        b = 255 - b;
+      
+        // Convert the RGB values back to hex
+        let complementHex = '#' + 
+          r.toString(16).padStart(2, '0') + 
+          g.toString(16).padStart(2, '0') + 
+          b.toString(16).padStart(2, '0');
+
+          // Oh ok! 
+      
+        return complementHex;
+      }
+    </script>
+
+
+  <script src="content/js/lesson.js"></script>
+
+
+</body>
+</html>

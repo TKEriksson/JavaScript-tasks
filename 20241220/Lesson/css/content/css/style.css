@@ -1,0 +1,42 @@
+body {
+  margin:0;
+  background-color: darkslateblue;
+  color: #fff;
+  border:10px outset rgb(21, 16, 49);
+}
+
+h1 {
+  background-color: aqua;
+  color:#000;
+}
+
+h2 {
+  background-color: rgb(255, 88, 194);
+  color:#000;
+}
+
+h3 {
+  background-color: darksalmon;
+  color:#000;
+}
+
+#layouth2 {
+  background-color: #00f;
+}
+
+.gradient {
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+a {
+  color: #fff;
+}
+
+a:visited {
+  color: #d3d3d3;
+}
+
+a:active {
+  color: #fff;
+}
