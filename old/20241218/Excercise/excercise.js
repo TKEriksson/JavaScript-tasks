@@ -37,15 +37,18 @@ console.log("\n\nExcercise 2\n*****************");
 
 // Write a JavaScript program that creates a class called 'Vehicle' with properties for make, model, and year. Include a method to display vehicle details. Create a subclass called 'Car' that inherits from the 'Vehicle' class and includes an additional property for the number of doors. Override the display method to include the number of doors.
 class vehicle {
+
   constructor (make, model, year) {
-    this.make = make;
+    this.namn = make;
     this.model = model;
     this.year = year;
   }
 
+
+
   showDetails() {
     console.log ("Details:");
-    console.log (this.make);
+    console.log (this.namn);
     console.log (this.model);
     console.log (this.year);
   }
@@ -66,7 +69,9 @@ class car extends vehicle {
 }
 
 const bil1 = new car("Volvo", "XC90", "2019", 4);
-bil1.showDetails();
+
+
+bil1.showDetails()
 
 const bil2 = new vehicle("BMW", "i5", "2018");
 bil2.showDetails();
@@ -234,6 +239,8 @@ class University {
 
   }
 
+
+
   showDep() {
     console.log(this.name + ":\n" + this.departments);
   }
@@ -272,3 +279,7 @@ plugg2.showDep();
 
 plugg2.addDep("Biologi");
 plugg2.showDep();
+
+
+let s = "";
+s.trim();

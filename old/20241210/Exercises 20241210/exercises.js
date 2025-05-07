@@ -19,9 +19,7 @@ let numbers = [-5, -2, -16, 10, 1]; // Ändrade lite siffror.
 let largestNumber = numbers[0];
 
 for (let i = 0; i < numbers.length; i++) {
-
   (numbers[i] >= largestNumber) && (largestNumber = numbers[i]);
-  
 }
 
 console.log("Högsta numret i " + numbers.toString() + " är: " + largestNumber);
