@@ -12,7 +12,8 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\basics.js"
+      "program": "${workspaceFolder}\\basics.js",
+      "console": "integratedTerminal",
     }
   ]
 }
