@@ -81,5 +81,17 @@ console.log();
 let n1 = 100;
 let n2 = 200;
 
-let result = n1 - n2;
+let result = n1 + n2;
+console.log(result); // Output the result of the subtraction
+
+result = n1 - n2;
+console.log(result); // Output the result of the subtraction
+
+result = n1 * n2;
+console.log(result); // Output the result of the subtraction
+
+result = n1 / n2;
+console.log(result); // Output the result of the subtraction
+
+result = n1 % n2;
 console.log(result); // Output the result of the subtraction
