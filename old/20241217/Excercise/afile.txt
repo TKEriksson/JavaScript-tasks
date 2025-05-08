@@ -1,3 +1,0 @@
-this is a file
-that contains some text
-on different rows.
